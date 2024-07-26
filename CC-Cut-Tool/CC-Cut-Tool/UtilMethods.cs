@@ -4,9 +4,11 @@ namespace CC_Cut_Tool;
 
 internal sealed class UtilMethods
 {
-    private const char _separator = '\t';
+    private const char _defaultSeparator = '\t';
     public async Task<string> PrintCutMethodResult(string fileName, int fieldNumber)
     {
+        ArgumentOutOfRangeException.ThrowIfLessThan(fieldNumber, 1);
+
         if (!File.Exists(fileName))
             throw new FileNotFoundException();
 
@@ -24,11 +26,21 @@ internal sealed class UtilMethods
 
         foreach (var line in lines)
         {
-            var separatedValues = line.Split(_separator);
+            if (DoesNotContainSeparator(line))
+            {
+                throw new Exception("Data does not contain separator.");
+            }
+
+            var separatedValues = line.Split(_defaultSeparator);
 
             stringBuilder.Append(separatedValues[fieldNumber - 1]).AppendLine();
         }
 
         return stringBuilder.ToString();
+    }
+
+    private static bool DoesNotContainSeparator(string text, char separator = _defaultSeparator)
+    {
+        return !text.Contains(separator);
     }
 }
