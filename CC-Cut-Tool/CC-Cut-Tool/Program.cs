@@ -12,8 +12,15 @@ internal class Program
 
     private static async Task RunWithParsedArgumentsAsync(CommandArgumentsConfig opts)
     {
-        var utils = new UtilMethods();
-        var cutResult = await utils.PrintCutMethodResult(opts.FileName, opts.FieldNumberValue);
-        Console.WriteLine(cutResult);
+        try
+        {
+            var utils = new UtilMethods();
+            var cutResult = await utils.PrintCutMethodResult(opts.FileName, opts.FieldNumberValue);
+            Console.WriteLine(cutResult);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine(ex.Message);
+        }
     }
 }
