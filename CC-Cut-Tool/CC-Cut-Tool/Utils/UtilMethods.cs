@@ -27,7 +27,7 @@ internal sealed class UtilMethods
         {
             if (DoesNotContainSeparator(line, separator))
             {
-                throw new Exception("Data does not contain separator.");
+                throw new Exception("Data does not contain used separator.");
             }
 
             var separatedValues = line.Split(separator);
