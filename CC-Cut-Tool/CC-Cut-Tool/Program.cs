@@ -1,5 +1,5 @@
-﻿using CC_Cut_Tool;
-using CC_Cut_Tool.Config;
+﻿using CC_Cut_Tool.Config;
+using CC_Cut_Tool.Utils;
 using CommandLine;
 
 internal class Program
@@ -16,7 +16,9 @@ internal class Program
         {
             opts.Validate();
             var utils = new UtilMethods();
-            var cutResult = await utils.PrintCutMethodResult(opts.FileName, opts.Field);
+            var utilsDto = new UtilMethodsDTO(opts.FileName, opts.Field, opts.Delimiter);
+
+            var cutResult = await utils.Cut(utilsDto);
             Console.WriteLine(cutResult);
         }
         catch (Exception ex)
