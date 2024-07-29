@@ -14,8 +14,9 @@ internal class Program
     {
         try
         {
+            opts.Validate();
             var utils = new UtilMethods();
-            var cutResult = await utils.PrintCutMethodResult(opts.FileName, opts.FieldNumberValue);
+            var cutResult = await utils.PrintCutMethodResult(opts.FileName, opts.Field);
             Console.WriteLine(cutResult);
         }
         catch (Exception ex)
