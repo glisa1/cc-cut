@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CC-Cut-Tool": {
+      "commandName": "Project",
+      "commandLineArgs": "-f1,2 sample.tsv"
+    }
+  }
+}

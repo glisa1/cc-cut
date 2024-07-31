@@ -5,8 +5,8 @@ namespace CC_Cut_Tool.Config;
 internal sealed class CommandArgumentsConfig
 {
 
-    [Option('f', "field", Required = true, HelpText = "Field number.")]
-    public int Field { get; init; }
+    [Option('f', "field", Required = true, HelpText = "Field number.", Min = 1, Separator = ',')]
+    public IEnumerable<int>? Field { get; init; }
 
     [Option('d', "delimiter", Required = false, HelpText = "Field number.", Default = '\t')]
     public char Delimiter { get; init; }
@@ -16,6 +16,7 @@ internal sealed class CommandArgumentsConfig
 
     public void Validate()
     {
-        ArgumentNullException.ThrowIfNullOrWhiteSpace(FileName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(FileName);
+        ArgumentNullException.ThrowIfNull(Field);
     }
 }
