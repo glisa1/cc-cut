@@ -5,7 +5,14 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CC-Cut-Tool", "CC-Cut-Tool\CC-Cut-Tool.csproj", "{3FA9BD64-933D-4D83-840F-7BF18A676C3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC-Cut-Tool.Tests", "CC-Cut-Tool.Tests\CC-Cut-Tool.Tests.csproj", "{A09874BF-247B-49A6-B62D-EB452E308956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CC-Cut-Tool.Tests", "CC-Cut-Tool.Tests\CC-Cut-Tool.Tests.csproj", "{A09874BF-247B-49A6-B62D-EB452E308956}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{3E8EF901-A578-4ADD-91E0-4D421A6596F9}"
+	ProjectSection(SolutionItems) = preProject
+		fourchords.csv = fourchords.csv
+		fourchords.small.csv = fourchords.small.csv
+		sample.tsv = sample.tsv
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
