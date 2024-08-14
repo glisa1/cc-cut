@@ -7,6 +7,7 @@ namespace CC_Cut_Tool.Tests
     {
         private UtilMethods methodsToTest = new();
         private string tabSeparatedFilePath = $"{Environment.CurrentDirectory}\\sample.tsv";
+        private string commaSeparatedFilePath = $"{Environment.CurrentDirectory}\\fourchords.tsv";
 
         [Fact]
         public async void UtilMethods_CutingSecondColumn_ReturnsCorrectResult()
