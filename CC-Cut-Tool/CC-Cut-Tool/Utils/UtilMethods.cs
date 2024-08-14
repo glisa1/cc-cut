@@ -2,7 +2,7 @@
 
 namespace CC_Cut_Tool.Utils;
 
-internal sealed class UtilMethods
+public sealed class UtilMethods
 {
     public async Task<string> Cut(UtilMethodsDTO utilDto)
     {
