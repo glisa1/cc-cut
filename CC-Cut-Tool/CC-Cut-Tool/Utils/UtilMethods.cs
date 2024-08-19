@@ -17,6 +17,16 @@ public sealed class UtilMethods
         return Cut(textLines, utilDto.FieldNumber, utilDto.Separator);
     }
 
+    public string Cut(UtilMethodsWithRedirectedInputDTO utilDto)
+    {
+        var textLines = utilDto.Input.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+        if (textLines.Length == 0)
+            throw new Exception("No data was read.");
+
+        return Cut(textLines, utilDto.FieldNumber, utilDto.Separator);
+    }
+
     private static string Cut(string[] lines, IEnumerable<int> fieldNumbers, char separator)
     {
         var formatString = GetFormatString(fieldNumbers, separator);

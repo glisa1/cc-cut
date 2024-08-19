@@ -2,7 +2,7 @@
   "profiles": {
     "CC-Cut-Tool": {
       "commandName": "Project",
-      "commandLineArgs": "-f1 -d, fourchords.csv"
+      "commandLineArgs": "Get-Content -tail 5 C:\\Repo\\cc-cut\\CC-Cut-Tool\\CC-Cut-Tool\\bin\\Debug\\net8.0\\fourchords.csv > -d',' -f'1, 2'"
     }
   }
 }
